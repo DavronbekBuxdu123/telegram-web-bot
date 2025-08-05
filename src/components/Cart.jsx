@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Cart({ cartItem, checkOut }) {
+export default function Cart({ cartItem }) {
   let sum = 0;
   const hisobla = () => {
     cartItem.map((c) => (sum += c.price * c.quantity));

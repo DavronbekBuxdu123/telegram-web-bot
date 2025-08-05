@@ -21,7 +21,6 @@ export default function App() {
 
   const addItem = (item) => {
     const existItem = cartItem.find((c) => c.id === item.id);
-    console.log("ishladi");
     if (existItem) {
       const newData = cartItem.map((c) =>
         c.id === item.id
