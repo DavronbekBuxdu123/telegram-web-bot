@@ -42,7 +42,7 @@ export default function App() {
   };
   const checkOut = () => {
     telegram.MainButton.text = "Sotib olish :)";
-    telegram.MainButton.show();
+    cartItem.length !== 0 && telegram.MainButton.show();
   };
   return (
     <>

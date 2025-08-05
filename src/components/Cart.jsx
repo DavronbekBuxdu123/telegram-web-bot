@@ -16,7 +16,7 @@ export default function Cart({ cartItem, checkOut }) {
         })}{" "}
       </p>
       <button
-        onClick={cartItem.length !== 0 && checkOut}
+        onClick={checkOut}
         disabled={cartItem.length === 0}
         className={`btn btn-success py-2 px-4 `}
       >
