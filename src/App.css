@@ -5,14 +5,14 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 40px;
-  padding: 20px;
+  padding: 40px;
 }
 body {
   background-color: #001e36;
 }
 .card__ {
   position: relative;
-  width: 370px;
+  width: 350px;
   background-color: #43a1fb;
   padding: 4px;
   margin-top: 4px;

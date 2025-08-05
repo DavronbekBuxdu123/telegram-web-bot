@@ -1,5 +1,5 @@
 import "./App.css";
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { getData } from "./constants/db";
 import Card from "./components/Card";
 import Cart from "./components/Cart";
@@ -49,10 +49,18 @@ export default function App() {
       setCartItem(newData);
     }
   };
-
+  const onSendData = useCallback(() => {
+    telegram.sendData(JSON.stringify(cartItem));
+  }, [cartItem]);
+  useEffect(() => {
+    telegram.onEvent("mainButtonClicked", onSendData);
+    return () => telegram.offEvent("mainButtonClicked", onSendData);
+  }, [onSendData]);
   return (
     <>
-      <h1 style={{ textAlign: "center", color: "white" }}>Sammi kurslar</h1>
+      <h1 style={{ textAlign: "center", color: "white", marginTop: "5px" }}>
+        Sammi kurslar
+      </h1>
       <Cart cartItem={cartItem} />
       <div className="cards__container">
         {courses.map((cours) => (
