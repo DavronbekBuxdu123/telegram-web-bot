@@ -8,7 +8,7 @@ export default function Cart({ cartItem, checkOut }) {
   hisobla();
   return (
     <div className="cart__container">
-      <p style={{ marginBottom: "0" }}>
+      <p style={{ marginBottom: "0", color: "white" }}>
         Umumiy narx
         {sum.toLocaleString("en-Us", {
           style: "currency",

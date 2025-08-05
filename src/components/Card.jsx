@@ -12,9 +12,16 @@ export default function Card({ cours, addItem, removeItem }) {
   };
   return (
     <div className="card__">
-      <div className="count__">
-        <p style={{ marginBottom: "0" }}>{count <= 0 ? 0 : count}</p>
-      </div>
+      {count > 0 ? (
+        <div className="count__">
+          <p style={{ marginBottom: "0" }}>{count}</p>
+        </div>
+      ) : (
+        <div className="count__ count__--hidden">
+          <p style={{ marginBottom: "0" }}>0</p>
+        </div>
+      )}
+
       <div className="card__header">
         <div className="">
           <img
@@ -38,7 +45,7 @@ export default function Card({ cours, addItem, removeItem }) {
       </div>
       <hr style={{ width: "95%", margin: "auto", color: "white" }} />
       <div className="btn__container">
-        <button onClick={handleDecrement} className="btn btn-warning px-5">
+        <button onClick={handleDecrement} className="btn btn-light px-5">
           +
         </button>
         {count !== 0 && (

@@ -58,7 +58,7 @@ export default function App() {
 
   return (
     <>
-      <h1 style={{ textAlign: "center", color: "black" }}>Sammi kurslar</h1>
+      <h1 style={{ textAlign: "center", color: "white" }}>Sammi kurslar</h1>
       <Cart cartItem={cartItem} checkOut={checkOut} />
       <div className="cards__container">
         {courses.map((cours) => (
