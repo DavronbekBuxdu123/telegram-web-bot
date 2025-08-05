@@ -24,6 +24,10 @@ export default function App() {
       const newData = [...cartItem, { ...item, quantity: 1 }];
       setCartItem(newData);
     }
+    if (newData.length > 0) {
+      telegram.MainButton.text = "Sotib olish :)";
+      telegram.MainButton.show();
+    }
   };
 
   const removeItem = (item) => {
@@ -39,11 +43,19 @@ export default function App() {
       );
       setCartItem(newData);
     }
+    if (newData.length === 0) {
+      telegram.MainButton.hide();
+    }
   };
   const checkOut = () => {
-    telegram.MainButton.text = "Sotib olish :)";
-    cartItem.length !== 0 && telegram.MainButton.show();
+    if (cartItem.length > 0) {
+      telegram.MainButton.text = "Sotib olish :)";
+      telegram.MainButton.show();
+    } else {
+      telegram.MainButton.hide();
+    }
   };
+
   return (
     <>
       <h1 style={{ textAlign: "center", color: "black" }}>Sammi kurslar</h1>
