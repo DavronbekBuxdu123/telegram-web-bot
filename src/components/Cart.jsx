@@ -15,13 +15,6 @@ export default function Cart({ cartItem, checkOut }) {
           currency: "USD",
         })}{" "}
       </p>
-      <button
-        onClick={checkOut}
-        disabled={cartItem.length === 0}
-        className={`btn btn-success py-2 px-4 `}
-      >
-        {cartItem.length === 0 ? "Buyurtma berish" : "To'lov"}
-      </button>
     </div>
   );
 }

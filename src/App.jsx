@@ -10,6 +10,15 @@ export default function App() {
   useEffect(() => {
     telegram.ready();
   }, []);
+  useEffect(() => {
+    if (cartItem.length > 0) {
+      telegram.MainButton.text = "Sotib olish :)";
+      telegram.MainButton.show();
+    } else {
+      telegram.MainButton.hide();
+    }
+  }, [cartItem]);
+
   const addItem = (item) => {
     const existItem = cartItem.find((c) => c.id === item.id);
     console.log("ishladi");
@@ -23,10 +32,6 @@ export default function App() {
     } else {
       const newData = [...cartItem, { ...item, quantity: 1 }];
       setCartItem(newData);
-    }
-    if (newData.length > 0) {
-      telegram.MainButton.text = "Sotib olish :)";
-      telegram.MainButton.show();
     }
   };
 
@@ -43,23 +48,12 @@ export default function App() {
       );
       setCartItem(newData);
     }
-    if (newData.length === 0) {
-      telegram.MainButton.hide();
-    }
-  };
-  const checkOut = () => {
-    if (cartItem.length > 0) {
-      telegram.MainButton.text = "Sotib olish :)";
-      telegram.MainButton.show();
-    } else {
-      telegram.MainButton.hide();
-    }
   };
 
   return (
     <>
       <h1 style={{ textAlign: "center", color: "white" }}>Sammi kurslar</h1>
-      <Cart cartItem={cartItem} checkOut={checkOut} />
+      <Cart cartItem={cartItem} />
       <div className="cards__container">
         {courses.map((cours) => (
           <Card
