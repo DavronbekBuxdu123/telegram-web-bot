@@ -1,0 +1,57 @@
+.cards__container {
+  max-width: 1400px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+.card__ {
+  position: relative;
+  width: 400px;
+  background-color: #3f9cfb;
+  padding: 4px;
+  margin-top: 4px;
+  border-radius: 5px;
+}
+body {
+  background-color: white;
+}
+.card__header {
+  padding: 10px;
+}
+.card__body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  color: white;
+}
+.btn__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  color: black;
+  margin-top: 5px;
+}
+.cart__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+.count__ {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: -13px;
+  right: -13px;
+  width: 30px;
+  height: 30px;
+  background-color: darkviolet;
+  border-radius: 100%;
+}
